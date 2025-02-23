@@ -1,0 +1,86 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .editor-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .navbar {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  .navbar h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .fullscreen-btn {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .fullscreen-btn:hover {
+    background-color: #e68900;
+  }
+  
+  .code-editor {
+    margin-top: 60px;  /* Adjust margin to avoid navbar */
+    padding: 20px;
+    width: 100%;
+    height: calc(100vh - 60px); /* Full screen height */
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    border: none;
+    outline: none;
+    resize: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+  }
+  
+  .editor-container.full-screen .code-editor {
+    height: 100vh; /* Full screen height when toggle is active */
+  }
+  
+  .editor-container.full-screen .navbar {
+    display: none; /* Hide navbar in full-screen mode */
+  }
+
+  .editor-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .cursor-tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    transform: translate(-50%, -120%);
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  
+  
